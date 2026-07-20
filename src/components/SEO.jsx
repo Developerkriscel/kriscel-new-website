@@ -49,6 +49,9 @@ const organizationSchema = {
   },
   sameAs: ["https://in.linkedin.com/company/kriscel-tech-pvt-ltd", "https://www.instagram.com/krisceltech/", "https://www.facebook.com/KriscelTech/", "https://www.youtube.com/@krisceltech/"]
 };
+
+SEO.organizationSchema = organizationSchema;
+
 /* harmony default export */
 const __WEBPACK_DEFAULT_EXPORT__ = SEO;
 
