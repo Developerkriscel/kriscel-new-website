@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kriscel.com/sitemap.xml
+Sitemap: https://taskeasy.in/sitemap.xml

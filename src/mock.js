@@ -561,51 +561,6 @@ const products = [{
     desc: "If closing your books is a 'project' every month, your finance stack is broken. Let's fix it."
   }
 }, {
-  id: "tasks",
-  slug: "employee-task-management-system",
-  name: "Task Management",
-  tagline: "Employee Productivity Hub",
-  badge: "Team Productivity",
-  color: "from-blue-400 to-indigo-500",
-  icon: "ListChecks",
-  desc: "Assign, track and close tasks across departments. No more 'I forgot' or 'nobody told me'. Every task has an owner, deadline and audit trail.",
-  problem: "You said it in the meeting. Nobody wrote it down. It never got done. Meetings turn into blame games and Monday reviews become firefights.",
-  highlights: ["Kanban, list & calendar views", "Recurring & dependent tasks", "WhatsApp reminders to owners", "Team-wise productivity reports"],
-  price: "Custom quote",
-  whatWeDo: [{
-    title: "Multi-View Task Boards",
-    desc: "Kanban for teams, list for managers, calendar for planning — everyone works in their preferred view."
-  }, {
-    title: "Smart Recurring Tasks",
-    desc: "Weekly reviews, monthly reports, daily huddles — create once, run forever with auto-owner rotation."
-  }, {
-    title: "WhatsApp Nudges",
-    desc: "Overdue tasks get gentle WhatsApp reminders. No more 'I didn't see the email' excuses."
-  }],
-  benefits: [{
-    title: "Task & Deadline Assignment",
-    desc: "Every task has an owner and a due date. Zero ambiguity, zero verbal instructions floating in air."
-  }, {
-    title: "Progress Tracking",
-    desc: "See what's blocked, what's on track, what's overdue — team-wise, project-wise or personal."
-  }, {
-    title: "Internal Communication",
-    desc: "Comments and files attach to tasks — not scattered across 12 WhatsApp groups and email threads."
-  }, {
-    title: "Recurring Automation",
-    desc: "Monthly MIS, weekly reviews, daily standups — all auto-created with the right owners."
-  }, {
-    title: "Productivity Insights",
-    desc: "See who's overloaded, who's underutilized, and who's actually closing tasks vs just moving them."
-  }, {
-    title: "Reduced Meeting Time",
-    desc: "Status meetings shrink from 60 min to 15 min because the board already has the answers."
-  }],
-  midCta: {
-    title: "Meetings Shouldn't Be Where Work Goes to Die",
-    desc: "Every 'I'll do it' in a meeting deserves an owner and deadline. Let's make that automatic."
-  }
-}, {
   id: "taskeasy",
   slug: "taskeasy-workflow-management",
   name: "TaskEasy Workflow Management",
@@ -809,12 +764,6 @@ const managementSystems = [{
   desc: "Eliminate stockouts and overstock. Track every item across warehouses in real-time.",
   features: ["Real-time Stock Tracking", "Barcode Scanning", "Multi-warehouse Support"]
 }, {
-  slug: "employee-task-management-system",
-  title: "Employee Task Management",
-  icon: "ListChecks",
-  desc: "Assign tasks, track progress, and boost transparency across your workforce.",
-  features: ["Task & Deadline Assignment", "Progress Boards", "Team Chat"]
-}, {
   slug: "production-management-system",
   title: "Production Management",
   icon: "Factory",
@@ -838,6 +787,12 @@ const managementSystems = [{
   icon: "ShoppingCart",
   desc: "Automated POs, vendor management and spend analytics.",
   features: ["PO Automation", "Vendor Management", "Budget Tracking"]
+}, {
+  slug: "taskeasy-workflow-management",
+  title: "TaskEasy Workflow Management",
+  icon: "Sparkles",
+  desc: "Complete workflow, delegation, checklist, approvals & MIS platform.",
+  features: ["Workflow & Delegation", "Checklist Audits", "MIS Command Center"]
 }];
 const growthServices = [{
   slug: "ecommerce-solutions",

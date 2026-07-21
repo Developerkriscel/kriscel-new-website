@@ -1,6 +1,6 @@
 import { CircleCheck, Sparkles, TriangleAlert, UsersRound, ArrowRight, Boxes, Factory, ListChecks, ShoppingCart, Wallet, Zap } from "lucide-react";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Button from "../components/ui/button.jsx";
 import Card from "../components/ui/card.jsx";
 import Badge from "../components/ui/badge.jsx";
@@ -16,7 +16,55 @@ const iconMap = {
 };
 
 const Products = () => {
-  const [active, setActive] = useState(mock.products[0].id);
+  const location = useLocation();
+  const cardRef = useRef(null);
+
+  const getInitialActive = () => {
+    const searchParams = new URLSearchParams(location.search);
+    const productParam = searchParams.get("product");
+    if (productParam) {
+      const found = mock.products.find(p => p.id === productParam || p.slug === productParam);
+      if (found) return found.id;
+    }
+    if (location.hash === "#taskeasy") {
+      const found = mock.products.find(p => p.id === "taskeasy");
+      if (found) return found.id;
+    }
+    return mock.products[0].id;
+  };
+
+  const [active, setActive] = useState(getInitialActive);
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const productParam = searchParams.get("product");
+    if (productParam) {
+      const found = mock.products.find(p => p.id === productParam || p.slug === productParam);
+      if (found) {
+        setActive(found.id);
+        setTimeout(() => {
+          if (cardRef.current) {
+            const yOffset = -120; // Navbar offset
+            const y = cardRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: "smooth" });
+          }
+        }, 150);
+      }
+    } else if (location.hash === "#taskeasy") {
+      const found = mock.products.find(p => p.id === "taskeasy");
+      if (found) {
+        setActive(found.id);
+        setTimeout(() => {
+          if (cardRef.current) {
+            const yOffset = -120;
+            const y = cardRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: "smooth" });
+          }
+        }, 150);
+      }
+    }
+  }, [location.search, location.hash]);
+
   const current = mock.products.find(p => p.id === active) || mock.products[0];
   const CurrentIcon = iconMap[current.icon] || Sparkles;
 
@@ -27,7 +75,7 @@ const Products = () => {
         <div className="relative max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24 text-center">
           <Badge className="bg-sky-100 text-sky-700 hover:bg-sky-100 border-0 rounded-full px-3 py-1 text-xs font-medium mb-5">Our Platform</Badge>
           <h1 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
-            Seven connected systems. <br />
+            Six connected systems. <br />
             <span className="gradient-text">One business OS.</span>
           </h1>
           <p className="mt-6 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
@@ -36,7 +84,7 @@ const Products = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-20" ref={cardRef} id="product-card-display">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="flex flex-wrap gap-2 justify-center mb-10">
             {mock.products.map(p => (
