@@ -95,8 +95,8 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-5 md:px-8 py-5 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-3">
           <p>© {new Date().getFullYear()} Kriscel Tech Pvt. Ltd. All rights reserved.</p>
           <div className="flex items-center gap-5">
-            <a href="#" className="hover:text-sky-400 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-sky-400 transition-colors">Terms of Service</a>
+            <Link to="/privacy-policy" className="hover:text-sky-400 transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-sky-400 transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

@@ -13,6 +13,8 @@ const Products = lazy(() => import("./pages/Products"));
 const Portfolio = lazy(() => import("./pages/Portfolio"));
 const Contact = lazy(() => import("./pages/Contact"));
 const DetailPage = lazy(() => import("./pages/DetailPage"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -36,16 +38,18 @@ function App() {
                 </div>
               }>
                 <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/services/:slug" element={<DetailPage type="service" />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/products/:slug" element={<DetailPage type="product" />} />
-                <Route path="/portfolio" element={<Portfolio />} />
-                <Route path="/contact" element={<Contact />} />
-              </Routes>
-            </Suspense>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/services/:slug" element={<DetailPage type="service" />} />
+                  <Route path="/products" element={<Products />} />
+                  <Route path="/products/:slug" element={<DetailPage type="product" />} />
+                  <Route path="/portfolio" element={<Portfolio />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/terms-of-service" element={<TermsOfService />} />
+                </Routes>
+              </Suspense>
             </ErrorBoundary>
           </Layout>
           <Toaster />
